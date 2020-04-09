@@ -264,12 +264,14 @@ export type PointGroupSortType =
   | "yx_descending";
 
 interface PointGroupCriteria {
+  group_type: string[];
   day: {
     op: ">" | "<",
     days_ago: number
   };
   string_eq: Record<string, string[] | undefined>,
   number_eq: Record<string, number[] | undefined>,
+  boolean_eq: Record<string, boolean[] | undefined>;
   number_gt: Record<string, number | undefined>,
   number_lt: Record<string, number | undefined>,
 }
